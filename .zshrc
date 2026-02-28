@@ -9,6 +9,7 @@ eval "$(dircolors -b)"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias clr='clear'
+alias cd='z'
 
 # Auto Completion
 autoload -Uz compinit
