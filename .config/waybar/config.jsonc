@@ -101,8 +101,8 @@
   },
   "custom/notification": {
     "escape": true,
-    "exec": "swaync-client -swb",
-    "exec-if": "which swaync-client",
+    "exec": "bash -c 'count=$(dunstctl count); if [ \"$count\" -gt 0 ]; then echo notification $count; else echo none; fi'",
+    "exec-if": "which dunstctl",
     "format": "{icon}",
     "format-icons": {
       "none": "󰅺",
