@@ -1,3 +1,5 @@
+#devkit-env
+source /etc/profile.d/devkit-env.sh
 
 # Starship
 eval "$(starship init zsh)"
