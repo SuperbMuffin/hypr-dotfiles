@@ -12,6 +12,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias clr='clear'
 alias cd='z'
+alias py='python'
 
 # Auto Completion
 autoload -Uz compinit
@@ -29,3 +30,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# Path
+#
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=$PATH:/var/lib/snapd/snap/bin
