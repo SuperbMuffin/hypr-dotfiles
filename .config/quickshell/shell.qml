@@ -16,7 +16,7 @@ PanelWindow {
         spacing: 8
 
         Rectangle {
-            color: "#d91a1b26"
+            color: "#aa1a1b26"
             radius: 24
             Layout.preferredHeight: 38
             Layout.preferredWidth: workspaces.implicitWidth + 24
@@ -26,10 +26,24 @@ PanelWindow {
                 anchors.centerIn: parent
             }
         }
-
+        
         Item { Layout.fillWidth: true }
         Rectangle {
-            color: "#d91a1b26"
+            color: "#aa1a1b26"
+            radius: 24
+            Layout.preferredHeight: 38
+            Layout.preferredWidth: clock.implicitWidth + 24
+
+            Clock {
+                id: clock
+                anchors.centerIn: parent
+            }
+        }
+
+        Item { Layout.fillWidth: true }
+
+        Rectangle {
+            color: "#aa1a1b26"
             radius: 24
             Layout.preferredHeight: 38
             Layout.preferredWidth: tray.width + 16
@@ -40,7 +54,7 @@ PanelWindow {
             }
         }
         Rectangle {
-            color: "#d91a1b26"
+            color: "#aa1a1b26"
             radius: 24
             Layout.preferredHeight: 38
             Layout.preferredWidth: 38
