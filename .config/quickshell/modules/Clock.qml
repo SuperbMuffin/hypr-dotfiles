@@ -9,7 +9,6 @@ Item {
       source: "/usr/share/fonts/TTF/DSEG7Modern-Bold.ttf"
     }
 
-
     Text {
         id: timeText
         anchors.centerIn: parent
