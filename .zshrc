@@ -13,6 +13,7 @@ alias grep='grep --color=auto'
 alias clr='clear'
 alias cd='z'
 alias py='python'
+alias s='yay -Ss'
 
 # Auto Completion
 autoload -Uz compinit
