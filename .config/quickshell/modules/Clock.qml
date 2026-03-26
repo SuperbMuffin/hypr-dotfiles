@@ -6,7 +6,7 @@ Item {
 
     FontLoader {
         id: nerdRoboto
-        source: "/home/elliot/.local/share/fonts/RobotoMono Nerd Font Complete Mono.ttf"
+        source: "/home/elliot/.local/share/fonts/RobotoMono Nerd Font Complete Mono Bold.ttf"
     }
 
     Text {
