@@ -21,7 +21,7 @@ selected=$(printf '%s\n' "${display[@]}" | fzf --no-sort --ansi --height 20 --re
 for wp in "${wallpapers[@]}"; do
     name=$(basename "$wp" | sed 's/\.[^.]*$//')
     if [[ "$name" == "$selected" ]]; then
-        swww img "$wp" --transition-type grow --transition-duration 1.7 --transition-fps 165
+        swww img "$wp" --transition-type grow --transition-duration 2.3 --transition-fps 165
         break
     fi
 done
