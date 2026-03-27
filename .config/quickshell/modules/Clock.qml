@@ -1,20 +1,21 @@
-import QtQuick 2.15
+import QtQuick
 
 Item {
-    implicitWidth: 120
-    implicitHeight: 40
+    implicitWidth: timeText.implicitWidth
+    implicitHeight: timeText.implicitHeight
 
     FontLoader {
         id: nerdRoboto
-        source: "/home/elliot/.local/share/fonts/RobotoMono Nerd Font Complete Mono Bold.ttf"
+        source: "/home/elliot/.local/share/fonts/RobotoMono Nerd Font Complete Mono.ttf"
     }
 
     Text {
         id: timeText
         anchors.centerIn: parent
-        text: Qt.formatDateTime(new Date(), "   h:mm AP") // 12-hour, lowercase am/pm
+        text: Qt.formatDateTime(new Date(), "  h:mm AP")
         font.family: nerdRoboto.font.family
         font.pixelSize: 24
+        font.weight: Font.Bold
         color: "#a9b1d6"
     }
 
@@ -22,7 +23,6 @@ Item {
         interval: 1000
         running: true
         repeat: true
-        onTriggered: timeText.text = Qt.formatDateTime(new Date(), "   h:mm AP")
-
+        onTriggered: timeText.text = Qt.formatDateTime(new Date(), "  h:mm AP")
     }
 }

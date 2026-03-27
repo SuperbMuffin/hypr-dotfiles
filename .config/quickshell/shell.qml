@@ -26,8 +26,21 @@ PanelWindow {
                 anchors.centerIn: parent
             }
         }
-        
+
+        Rectangle {
+            color: "#aa1a1b26"  // matches other module backgrounds
+            radius: 24
+            Layout.preferredHeight: 38
+            Layout.preferredWidth: cpuTemp.implicitWidth + 24
+
+            CpuTemp {
+                id: cpuTemp
+                anchors.centerIn: parent
+        }
+}
+
         Item { Layout.fillWidth: true }
+
         Rectangle {
             color: "#aa1a1b26"
             radius: 24
