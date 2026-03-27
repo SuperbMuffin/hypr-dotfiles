@@ -15,65 +15,80 @@ PanelWindow {
         anchors.margins: 8
         spacing: 8
 
-        Rectangle {
-            color: "#aa1a1b26"
-            radius: 24
-            Layout.preferredHeight: 38
-            Layout.preferredWidth: workspaces.implicitWidth + 24
+        // ── Left group ────────────────────────────────────────
+        Item {
+            Layout.fillWidth: true
 
-            Workspaces {
-                id: workspaces
-                anchors.centerIn: parent
+            RowLayout {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                spacing: 8
+
+                Rectangle {
+                    color: "#aa1a1b26"
+                    radius: 24
+                    implicitHeight: 38
+                    implicitWidth: workspaces.implicitWidth + 24
+                    Workspaces {
+                        id: workspaces
+                        anchors.centerIn: parent
+                    }
+                }
+
+                Rectangle {
+                    color: "#aa1a1b26"
+                    radius: 24
+                    implicitHeight: 38
+                    implicitWidth: cpuTemp.implicitWidth + 24
+                    CpuTemp {
+                        id: cpuTemp
+                        anchors.centerIn: parent
+                    }
+                }
             }
         }
 
-        Rectangle {
-            color: "#aa1a1b26"  // matches other module backgrounds
-            radius: 24
-            Layout.preferredHeight: 38
-            Layout.preferredWidth: cpuTemp.implicitWidth + 24
-
-            CpuTemp {
-                id: cpuTemp
-                anchors.centerIn: parent
-        }
-}
-
-        Item { Layout.fillWidth: true }
-
+        // ── Center: Clock ─────────────────────────────────────
         Rectangle {
             color: "#aa1a1b26"
             radius: 24
-            Layout.preferredHeight: 38
-            Layout.preferredWidth: clock.implicitWidth + 24
-
+            implicitHeight: 38
+            implicitWidth: clock.implicitWidth + 24
             Clock {
                 id: clock
                 anchors.centerIn: parent
             }
         }
 
-        Item { Layout.fillWidth: true }
+        // ── Right group ───────────────────────────────────────
+        Item {
+            Layout.fillWidth: true
 
-        Rectangle {
-            color: "#aa1a1b26"
-            radius: 24
-            Layout.preferredHeight: 38
-            Layout.preferredWidth: tray.width + 16
+            RowLayout {
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                spacing: 8
 
-            Tray {
-                id: tray
-                anchors.centerIn: parent
-            }
-        }
-        Rectangle {
-            color: "#aa1a1b26"
-            radius: 24
-            Layout.preferredHeight: 38
-            Layout.preferredWidth: 38
+                Rectangle {
+                    color: "#aa1a1b26"
+                    radius: 24
+                    implicitHeight: 38
+                    implicitWidth: tray.width + 16
+                    Tray {
+                        id: tray
+                        anchors.centerIn: parent
+                    }
+                }
 
-            PowerButton {
-                anchors.centerIn: parent
+                Rectangle {
+                    color: "#aa1a1b26"
+                    radius: 24
+                    implicitHeight: 38
+                    implicitWidth: 38
+                    PowerButton {
+                        anchors.centerIn: parent
+                    }
+                }
             }
         }
     }
