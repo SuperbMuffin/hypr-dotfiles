@@ -17,4 +17,5 @@ style = "bg:#3A95C7 fg:white"
 [time]
 disabled = false
 format = "[ $time ]($style)"
+time_format = "%H:%M"
 style = "bg:#40A9E0 fg:white"
