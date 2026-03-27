@@ -25,7 +25,7 @@ RowLayout {
             Text {
                 anchors.centerIn: parent
                 text: modelData
-                color: isActive ? "#1a1b26" : (isOccupied ? "#a9b1d6" : "#444b6a")
+                color: isActive ? "#1a1b26" : (isOccupied ? "#a9b1d6" : "#545c7e")
                 font.pixelSize: 16
                 font.bold: true
             }

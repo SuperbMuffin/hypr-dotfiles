@@ -25,7 +25,7 @@ PanelWindow {
                 spacing: 8
 
                 Rectangle {
-                    color: "#aa1a1b26"
+                    color: "#A11a1b26"
                     radius: 24
                     implicitHeight: 38
                     implicitWidth: workspaces.implicitWidth + 24
@@ -36,7 +36,7 @@ PanelWindow {
                 }
 
                 Rectangle {
-                    color: "#aa1a1b26"
+                    color: "#A11a1b26"
                     radius: 24
                     implicitHeight: 38
                     implicitWidth: cpuTemp.implicitWidth + 24
@@ -50,7 +50,7 @@ PanelWindow {
 
         // ── Center: Clock ─────────────────────────────────────
         Rectangle {
-            color: "#aa1a1b26"
+            color: "#A11a1b26"
             radius: 24
             implicitHeight: 38
             implicitWidth: clock.implicitWidth + 24
@@ -70,7 +70,7 @@ PanelWindow {
                 spacing: 8
 
                 Rectangle {
-                    color: "#aa1a1b26"
+                    color: "#A11a1b26"
                     radius: 24
                     implicitHeight: 38
                     implicitWidth: tray.width + 16
@@ -81,7 +81,7 @@ PanelWindow {
                 }
 
                 Rectangle {
-                    color: "#aa1a1b26"
+                    color: "#A11a1b26"
                     radius: 24
                     implicitHeight: 38
                     implicitWidth: 38
