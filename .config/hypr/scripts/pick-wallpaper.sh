@@ -12,7 +12,7 @@ mapfile -t wallpapers < <(find -L "$WALL_DIR" -type f \( -iname "*.jpg" -o -inam
 mapfile -t display < <(for f in "${wallpapers[@]}"; do basename "$f" | sed 's/\.[^.]*$//'; done)
 
 # Show TUI menu using fzf (older versions, no --no-query)
-selected=$(printf '%s\n' "${display[@]}" | fzf --no-sort --ansi --height 20 --reverse --inline-info --prompt="Select wallpaper: ")
+selected=$(printf '%s\n' "${display[@]}" | fzf --no-sort --ansi --reverse --inline-info --prompt="Select wallpaper: ")
 
 # Exit if nothing selected
 [ -z "$selected" ] && exit 0
