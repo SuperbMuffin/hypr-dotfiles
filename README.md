@@ -3,6 +3,7 @@
 These are my personal dotfiles. Don't expect much!  
 
 Managed using [GNU Stow](https://www.gnu.org/software/stow/). To apply them, just run:
+
 **Warning**: Make sure to run the stow command from the root of the Project, e.g. from ~/dotfiles
 
 ~~~bash
@@ -21,6 +22,7 @@ cd ~/hypr-dotfiles
 ~~~
 
 2. Use Stow to link your dotfiles:
+
 **Warning**: Make sure to run the stow command from the root of the Project, e.g. from ~/dotfiles
 
 ~~~bash
