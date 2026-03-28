@@ -7,7 +7,7 @@ import qs.modules
 
 PanelWindow {
     anchors { top: true; left: true; right: true }
-    implicitHeight: 46
+    implicitHeight: 56
     color: "transparent"
 
     RowLayout {
