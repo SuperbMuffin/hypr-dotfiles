@@ -7,21 +7,19 @@ import qs.modules
 ShellRoot {
     readonly property font barFont: Qt.font({
         family: "JetBrainsMono Nerd Font",
-        pixelSize: 13
+        pixelSize: 16,
+        bold: true
     })
 
     Variants {
         model: Quickshell.screens
-
         PanelWindow {
             property var modelData
-
             screen: modelData
             implicitHeight: 56
             implicitWidth: screen.width
             color: "transparent"
             mask: Region { item: pill }
-
             anchors {
                 top: true
                 left: true
@@ -45,22 +43,17 @@ ShellRoot {
                     anchors.rightMargin: 16
                     spacing: 12
 
-                    Text {
-                        text: "left"
-                        color: "white"
-                        font: barFont
+                    Clock {
+                        id: clock
+                        anchors.left: parent.left
                     }
-
-                    Item { Layout.fillWidth: true }
-
-                    Workspaces {}
-
-                    Item { Layout.fillWidth: true }
-
-                    Text {
-                        text: "right"
-                        color: "white"
-                        font: barFont
+                    Workspaces {
+                        id: workspaces
+                        anchors.centerIn: parent
+                    }
+                    CpuTemp {
+                        id: cpuTemp
+                        anchors.right: parent.right
                     }
                 }
             }
