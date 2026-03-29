@@ -15,7 +15,7 @@ Text {
 
     Process {
         id: tempProc
-        command: ["/bin/sh", "/home/elliot/.config/quickshell/normal/helpers/CpuTemp.sh"]
+        command: ["/bin/sh", "-c", "~/.config/quickshell/normal/helpers/CpuTemp.sh"]
         running: false
         stdout: SplitParser {
             onRead: data => {
