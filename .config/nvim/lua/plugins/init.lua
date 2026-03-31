@@ -12,7 +12,13 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  {
+    "echasnovski/mini.animate",
+    lazy = false,
+    config = function()
+      require("mini.animate").setup()
+    end,
+  },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
