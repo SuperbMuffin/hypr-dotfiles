@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = 'BufWritePre', 
     opts = require "configs.conform",
   },
 
@@ -12,13 +12,20 @@ return {
       require "configs.lspconfig"
     end,
   },
+
   {
-    "echasnovski/mini.animate",
-    lazy = false,
+    "pwntester/octo.nvim",
+    cmd = "Octo",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
     config = function()
-      require("mini.animate").setup()
+      require("octo").setup()
     end,
-  },
+  }
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
