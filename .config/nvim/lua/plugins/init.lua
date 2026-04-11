@@ -28,7 +28,9 @@ return {
     config = function(_, opts)
       require("octo").setup(opts)
     end,
-  }
+  },
+
+  { import = "plugins.mini-starter" },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
