@@ -14,6 +14,7 @@ alias clr='clear'
 alias cd='z'
 alias py='python'
 alias s='yay --color=always -Ss'
+alias test='mgba-qt build/gbalatro.gba'
 # Auto Completion
 autoload -Uz compinit
 compinit
