@@ -29,6 +29,32 @@ return {
       require("octo").setup(opts)
     end,
   },
+  
+  {
+    "vyfor/cord.nvim",
+    build = "cargo build --release",
+    lazy = false,
+    opts = {
+      usercmds = true,
+      log_level = vim.log.levels.OFF,
+      editor = {
+        tooltip = "Neovim",
+        icon = nil, -- uses default neovim icon
+      },
+      display = {
+        show_time = true,
+        show_repository = true,
+      },
+      text = {
+        editing = "Editing {filename}",
+        viewing = "Viewing {filename}",
+        file_browser = "Browsing files",
+        plugin_manager = "Managing plugins",
+        lsp_manager = "Configuring LSP",
+        vcs = "Committing changes",
+      },
+    },
+  },
 
   { import = "plugins.mini-starter" },
 
