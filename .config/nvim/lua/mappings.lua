@@ -9,6 +9,11 @@ map("i", "jk", "<ESC>")
 
 map("n", "<leader>oo", "<cmd>Octo<cr>", { desc = "Octo menu" })
 
+map("n", "gx", function()
+    local url = vim.fn.expand("<cfile>")
+    vim.fn.jobstart({ "xdg-open", url }, { detach = true })
+end, { desc = "Open URL under cursor" })
+
 map("n", "<leader>gi", function()
   vim.cmd("Octo issue list")
 end, { desc = "GitHub Issues" })
