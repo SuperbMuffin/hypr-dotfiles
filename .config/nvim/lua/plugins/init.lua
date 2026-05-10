@@ -69,33 +69,6 @@ return {
    	},
   },
 
-  -- image.nvim
-  {
-    "3rd/image.nvim",
-    build = false, 
-    rocks = { enabled = false},
-    lazy = false,
-    opts = {
-        processor = "magick_cli",
-        backend = "kitty",
-        integrations = {
-            markdown = {
-                enabled = true,
-                download_remote_images = true,
-                filetypes = { "markdown", "vimwiki" },
-            },
-        },
-        max_width = nil,
-        max_height = nil,
-        max_width_window_percentage = math.huge,
-        max_height_window_percentage = 50,
-        hijack_file_patterns = {
-            "*.png", "*.jpg", "*.jpeg",
-            "*.gif", "*.webp", "*.svg",
-        },
-    },
-  },
-
   {
     "OXY2DEV/markview.nvim",
     lazy = false,
