@@ -46,8 +46,6 @@ return {
         show_repository = true,
       },
       text = {
-        editing = "Editing {filename}",
-        viewing = "Viewing {filename}",
         file_browser = "Browsing files",
         plugin_manager = "Managing plugins",
         lsp_manager = "Configuring LSP",
@@ -58,16 +56,52 @@ return {
 
   { import = "plugins.mini-starter" },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
+  {
+   	"nvim-treesitter/nvim-treesitter",
+   	opts = {
+   		ensure_installed = {
+   			"vim", "lua", "vimdoc",
+        "html", "css", "c", "markdown", "markdown_inline",
+        "bash", "python", "json", "jsonc", "yaml", "diff",
+        "query", "rust", "javascript", "gitignore", "gitcommit",
+        "git_config"
+   		},
+   	},
+  },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  -- image.nvim
+  {
+    "3rd/image.nvim",
+    build = false, 
+    rocks = { enabled = false},
+    lazy = false,
+    opts = {
+        processor = "magick_cli",
+        backend = "kitty",
+        integrations = {
+            markdown = {
+                enabled = true,
+                download_remote_images = true,
+                filetypes = { "markdown", "vimwiki" },
+            },
+        },
+        max_width = nil,
+        max_height = nil,
+        max_width_window_percentage = math.huge,
+        max_height_window_percentage = 50,
+        hijack_file_patterns = {
+            "*.png", "*.jpg", "*.jpeg",
+            "*.gif", "*.webp", "*.svg",
+        },
+    },
+  },
+
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-tree/nvim-web-devicons",
+    },
+  },
 }
