@@ -64,7 +64,7 @@ return {
         "html", "css", "c", "markdown", "markdown_inline",
         "bash", "python", "json", "jsonc", "yaml", "diff",
         "query", "rust", "javascript", "gitignore", "gitcommit",
-        "git_config"
+        "git_config", "latex"
    		},
    	},
   },
@@ -76,5 +76,15 @@ return {
         "nvim-treesitter/nvim-treesitter",
         "nvim-tree/nvim-web-devicons",
     },
+    opts = {
+        preview = {
+            hybrid_modes = {},
+        },
+    },
+  },
+
+  {
+    "jbyuki/nabla.nvim",
+    lazy = false,
   },
 }
