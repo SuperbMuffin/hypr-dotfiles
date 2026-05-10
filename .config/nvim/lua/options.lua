@@ -5,6 +5,9 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = { "markdown", "text", "gitcommit" },
     callback = function()

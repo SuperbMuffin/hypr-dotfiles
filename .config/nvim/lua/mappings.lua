@@ -4,6 +4,8 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+map("n", "<Down>", "g<Down>", { desc = "Move down visual line" })
+map("n", "<Up>", "g<Up>", { desc = "Move up visual line" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
