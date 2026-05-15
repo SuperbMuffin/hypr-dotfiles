@@ -1,12 +1,12 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', 
+    event = "BufWritePre",
     opts = require "configs.conform",
   },
-  
-  { 
-    "github/copilot.vim", 
+
+  {
+    "github/copilot.vim",
     lazy = false,
   },
 
@@ -33,7 +33,7 @@ return {
       require("octo").setup(opts)
     end,
   },
-  
+
   {
     "vyfor/cord.nvim",
     build = "cargo build --release",
@@ -61,29 +61,45 @@ return {
   { import = "plugins.mini-starter" },
 
   {
-   	"nvim-treesitter/nvim-treesitter",
-   	opts = {
-   		ensure_installed = {
-   			"vim", "lua", "vimdoc",
-        "html", "css", "c", "markdown", "markdown_inline",
-        "bash", "python", "json", "jsonc", "yaml", "diff",
-        "query", "rust", "javascript", "gitignore", "gitcommit",
-        "git_config", "latex"
-   		},
-   	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "c",
+        "markdown",
+        "markdown_inline",
+        "bash",
+        "python",
+        "json",
+        "jsonc",
+        "yaml",
+        "diff",
+        "query",
+        "rust",
+        "javascript",
+        "gitignore",
+        "gitcommit",
+        "git_config",
+        "latex",
+      },
+    },
   },
 
   {
     "OXY2DEV/markview.nvim",
     lazy = false,
     dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-tree/nvim-web-devicons",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
     },
     opts = {
-        preview = {
-            hybrid_modes = {},
-        },
+      preview = {
+        hybrid_modes = {},
+      },
     },
   },
 }
