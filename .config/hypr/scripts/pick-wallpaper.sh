@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 WALL_DIR="$HOME/Wallpapers"
 
 # Find all image files (follow symlinks)
@@ -11,8 +10,7 @@ mapfile -t wallpapers < <(find -L "$WALL_DIR" -type f \( -iname "*.jpg" -o -inam
 # Strip extensions for display
 mapfile -t display < <(for f in "${wallpapers[@]}"; do basename "$f" | sed 's/\.[^.]*$//'; done)
 
-# Show TUI menu using fzf (older versions, no --no-query)
-selected=$(printf '%s\n' "${display[@]}" | fzf --no-sort --ansi --reverse --inline-info --prompt="Select wallpaper: ")
+selected=$(printf '%s\n' "${display[@]}" | rofi -dmenu -no-sort -p "Wallpaper" -theme ~/.config/rofi/themes/glass.rasi)
 
 # Exit if nothing selected
 [ -z "$selected" ] && exit 0
