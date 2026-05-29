@@ -19,7 +19,7 @@ configuration {
 }
 
 * {
-    base:        rgba(10, 10, 14, 0.35);
+    base:        rgba(10, 10, 14, 0.50);
     surface:     rgba(255, 255, 255, 0.06);
     accent:      #7c8ff7;
     accent-dim:  rgba(124, 143, 247, 0.18);
