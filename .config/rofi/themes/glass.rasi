@@ -3,16 +3,14 @@
    ============================================================ */
 
 configuration {
-    modi:              "drun,calc,emoji,filebrowser";
+    modi:              "drun,emoji,filebrowser";
     show-icons:        true;
     icon-theme:        "Papirus-Dark";
     font:              "JetBrainsMono Nerd Font 12";
     drun-display-format: "{name}";
     display-drun:      "";
-    display-calc:      "󰃬";
     display-emoji:     "󰞅";
     display-filebrowser: "󰉋";
-    calc-command:      "echo -n '{result}' | wl-copy";
     show-match:        true;
     kb-mode-next:      "Control+Tab";
     kb-mode-previous:  "Control+ISO_Left_Tab";
@@ -74,7 +72,7 @@ entry {
 listview {
     background-color: transparent;
     lines:            3;
-    columns:          5;
+    columns:          4;
     spacing:          6px;
     padding:          12px;
     scrollbar:        false;
