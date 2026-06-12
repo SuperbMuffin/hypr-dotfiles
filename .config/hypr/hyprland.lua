@@ -6,6 +6,7 @@ require("conf.animations")
 require("conf.input")
 require("conf.gestures")
 require("conf.binds")
+require("conf.neovide")
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
