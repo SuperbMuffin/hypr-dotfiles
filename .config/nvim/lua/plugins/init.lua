@@ -11,6 +11,14 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+    opts = {
+      max_lines = 3,
+    },
+  },
+
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
