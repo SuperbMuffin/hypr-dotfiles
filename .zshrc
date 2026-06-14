@@ -10,16 +10,20 @@ eval "$(dircolors -b)"
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
 alias clr='clear'
 alias cd='z'
 alias py='python'
 alias s='yay --color=always -Ss'
 alias test='mgba-qt build/gbalatro.gba'
+
 alias ls='eza --icons --group-directories-first'
 alias la='eza --icons --group-directories-first -a'        # show hidden
 alias ll='eza --icons --group-directories-first -la'       # long format + hidden
 alias lt='eza --tree --icons --group-directories-first -L 2'
 alias lt3='eza --tree --icons --group-directories-first -L 3'
+
+alias gut='git' # the type I keep making 
 
 # Auto Completion
 autoload -Uz compinit
