@@ -23,7 +23,7 @@ alias ll='eza --icons --group-directories-first -la'       # long format + hidde
 alias lt='eza --tree --icons --group-directories-first -L 2'
 alias lt3='eza --tree --icons --group-directories-first -L 3'
 
-alias gut='git' # the type I keep making 
+alias gut='git' # the typo I keep making 
 
 # Auto Completion
 autoload -Uz compinit
