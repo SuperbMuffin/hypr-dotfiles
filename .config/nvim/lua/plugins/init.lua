@@ -94,7 +94,31 @@ return {
         "git_config",
         "latex",
       },
+
+      highlight = {
+        enable = true,
+      },
+
+      indent = {
+        enable = true,
+      },
     },
+  },
+
+  {
+    "andyg/leap.nvim",
+    url = "https://codeberg.org/andyg/leap.nvim",
+    config = function()
+      local leap = require "leap"
+
+      vim.keymap.set({ "n", "x", "o" }, "<A-Space>", function()
+        leap.leap {}
+      end, { desc = "Leap forward" })
+
+      vim.keymap.set({ "n", "x", "o" }, "<A-f>", function()
+        leap.leap { backward = true }
+      end, { desc = "Leap backward" })
+    end,
   },
 
   {
