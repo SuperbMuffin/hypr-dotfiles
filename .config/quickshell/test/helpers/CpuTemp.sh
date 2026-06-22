@@ -1,2 +1,7 @@
 #!/bin/bash
-sensors | awk '/k10temp-pci/ {flag=1} flag && /Tctl:/ {print $2; exit}' | sed 's/+//'
+
+sensors | awk '
+/Core 0:/ {print $3; exit}
+/Package id 0:/ {print $4; exit}
+/Tctl:/ {print $2; exit}
+' | sed 's/+//'

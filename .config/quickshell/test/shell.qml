@@ -2,6 +2,7 @@ import Quickshell
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Io
 import qs.modules
 
 ShellRoot {
@@ -9,7 +10,20 @@ ShellRoot {
         family: "JetBrainsMono Nerd Font",
         pixelSize: 16,
         bold: true
-    })
+      })
+      Item {
+          property bool hasBattery: false
+
+          Process {
+              command: ["sh", "-c", "test -d /sys/class/power_supply/BAT0 && echo yes || echo no"]
+              running: true
+
+              stdout: SplitParser {
+                  onRead: data => hasBattery = (data.trim() === "yes")
+              }
+          }
+      }
+
 
     Variants {
         model: Quickshell.screens
@@ -43,18 +57,17 @@ ShellRoot {
                     anchors.rightMargin: 16
                     spacing: 12
 
-                    Clock {
-                        id: clock
-                        anchors.left: parent.left
-                    }
+                    Clock {}
                     Workspaces {
-                        id: workspaces
                         anchors.centerIn: parent
                     }
-                    CpuTemp {
-                        id: cpuTemp
-                        anchors.right: parent.right
+                    Item {
+                        Layout.fillWidth: true
                     }
+                    Battery {
+                      visible: hasBattery
+                    }
+                    CpuTemp {}
                 }
             }
         }
