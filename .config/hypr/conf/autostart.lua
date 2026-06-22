@@ -1,7 +1,6 @@
 hl.on("hyprland.start", function()
 	hl.exec_cmd("qs -c test")
 	hl.exec_cmd("dunst")
-	hl.exec_cmd("elephant")
 	hl.exec_cmd("swayosd-server")
 	hl.exec_cmd("awww-daemon")
 	hl.exec_cmd("awww restore")
