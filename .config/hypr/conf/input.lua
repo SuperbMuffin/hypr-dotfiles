@@ -9,6 +9,9 @@ hl.config({
 		kb_options = "caps:escape",
 		kb_rules = "",
 
+		sensitivity = -0.75,
+		accel_profile = "flat",
+
 		follow_mouse = 1,
 	},
 })
