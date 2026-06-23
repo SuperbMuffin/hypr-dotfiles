@@ -11,19 +11,6 @@ ShellRoot {
         pixelSize: 16,
         bold: true
       })
-      Item {
-          property bool hasBattery: false
-
-          Process {
-              command: ["sh", "-c", "test -d /sys/class/power_supply/BAT0 && echo yes || echo no"]
-              running: true
-
-              stdout: SplitParser {
-                  onRead: data => hasBattery = (data.trim() === "yes")
-              }
-          }
-      }
-
 
     Variants {
         model: Quickshell.screens
@@ -64,9 +51,7 @@ ShellRoot {
                     Item {
                         Layout.fillWidth: true
                     }
-                    Battery {
-                      visible: hasBattery
-                    }
+                    Battery {}
                     CpuTemp {}
                 }
             }

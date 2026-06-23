@@ -7,8 +7,12 @@ RowLayout {
     id: root
     spacing: 6
 
+    property bool batteryPresent: false
+    visible: batteryPresent
+
     property int percent: -1
     property string status: "Unknown"
+
 
     Text {
         text: {
@@ -56,6 +60,23 @@ RowLayout {
     }
 
     Process {
+        id: presentProc
+        command: ["/bin/sh", "-c", "test -d /sys/class/power_supply/BAT0 && echo yes || echo no"]
+        running: false
+
+        stdout: SplitParser {
+            onRead: data => {
+                root.batteryPresent = data.trim() === "yes"
+
+                if (root.batteryPresent) {
+                    capProc.running = true
+                    statProc.running = true
+                }
+            }
+        }
+    }
+
+    Process {
         id: statProc
         command: ["/bin/sh", "-c", "cat /sys/class/power_supply/BAT0/status"]
         running: false
@@ -64,6 +85,7 @@ RowLayout {
             onRead: data => root.status = data.trim()
         }
     }
+    
 
     Timer {
         interval: 3000
@@ -71,8 +93,12 @@ RowLayout {
         repeat: true
         triggeredOnStart: true
         onTriggered: {
-            capProc.running = true
-            statProc.running = true
+            if (root.batteryPresent){
+                capProc.running = true
+                statProc.running = true
+            } else {
+                presentProc.running = true
+            }
         }
     }
 }
