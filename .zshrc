@@ -8,7 +8,6 @@ eval "$(starship init zsh)"
 eval "$(dircolors -b)"
 
 # Aliases
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 alias clr='clear'
@@ -25,6 +24,7 @@ alias lt3='eza --tree --icons --group-directories-first -L 3'
 
 alias gut='git' # the typo I keep making 
 
+alias sudo='doas'
 
 alias myip='curl -s https://ipinfo.io/json | python3 -c '"'"'import sys,json; d=json.load(sys.stdin); print("IP:", d.get("ip","N/A")); print("City:", d.get("city","N/A")); print("Region:", d.get("region","N/A")); print("Country:", d.get("country","N/A")); print("ISP:", d.get("org","N/A"))'"'"''
 
@@ -50,7 +50,3 @@ eval "$(zoxide init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/var/lib/snapd/snap/bin
 export PATH=$HOME/.npm-global/bin:$PATH
-
-
-# Added by Antigravity CLI installer
-export PATH="/home/elliot/.local/bin:$PATH"
