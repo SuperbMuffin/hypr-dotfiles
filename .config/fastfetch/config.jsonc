@@ -1,135 +1,51 @@
-// Based on exmaple 14.jsonc -> Inspired by Catnap
+// Inspired by Catnap (https://github.com/iinsertNameHere/catnap)
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        "padding": {
-            "top": 2,
-            "left": 2
-        },
-        "color": {
-            "1": "\u001b[38;5;208m"  // Orange color for logo
-        }
+  "logo": {
+      "type": "file",
+      "source": "~/.config/fastfetch/cat.txt",
+      "color": {
+          "1": "white",
+      }
     },
     "display": {
         "separator": "",
-        "constants": [
-            "──────────────" // {$1}, used in Custom module
-        ],
         "key": {
-            "width": 10
+            "width": 15
         }
     },
     "modules": [
         {
-            "type": "custom", // HardwareStart
-            // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
-            "format": "{#90}┌{$1} Hardware {$1}{$1}┐{#}"
-        },
-        {
-            "key": "CPU",
-            "type": "cpu",
-            "showPeCoreCount": true,
-            "keyColor": "33"
-        },
-        {
-            "key": "GPU",
-            "type": "gpu",
-            "keyColor": "32"
-        },
-        {
-            "key": "Display",
-            "type": "display",
-            "keyColor": "36"
-        },
-        {
-            "key": "Disk",
-            "type": "disk",
-            "folders": "/",
-            "keyColor": "34"
-        },
-        {
-            "key": "Disk",
-            "type": "disk",
-            "folders": "/home",
-            "keyColor": "94"
-        },
-        {
-            "key": "Memory",
-            "type": "memory",
+            // draw borders first to make colors of left and right border consistant
+            "key": " user",
+            "type": "title",
+            "format": "{user-name}",
             "keyColor": "31"
         },
         {
-            "key": "Swap",
-            "type": "swap",
-            "keyColor": "95"
-        },
-        {
-            "type": "custom", // InformationEnd
-            "format": "{#90}└{$1}────────────────────────{$1}┘{#}"
-        },
-        {
-            "type": "custom", // SoftwareStart
-            // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
-            "format": "{#90}┌{$1} Software {$1}{$1}┐{#}"
-        },
-        {
-            "key": "OS",
-            "type": "os",
+            "key": "󰅐 uptime",
+            "type": "uptime",
             "keyColor": "33"
         },
         {
-            "key": "Kernel",
-            "type": "kernel",
-            "keyColor": "93"
+            "key": "{icon} distro",
+            "type": "os",
+            "keyColor": "34"
         },
         {
-            "key": "DM",
-            "type": "lm",
-            "keyColor": "35"
-        },
-        {
-            "key": "DE",
+            "key": "󰇄 desktop",
             "type": "de",
-            "keyColor": "91"
-        },
-        {
-            "key": "WM",
-            "type": "wm",
-            "keyColor": "32"
-        },
-        {
-            "key": "Theme",
-            "type": "theme",
-            "keyColor": "92"
-        },
-        {
-            "key": "Icons",
-            "type": "icons",
             "keyColor": "36"
         },
         {
-            "key": "Font",
-            "type": "font",
-            "keyColor": "96"
-        },
-        {
-            "key": "Font",
-            "type": "terminalfont",
-            "keyColor": "34"
-        },
-        {
-            "key": "Terminal",
-            "type": "terminal",
-            "keyColor": "94"
-        },
-        {
-            "key": "Shell",
+            "key": " shell",
             "type": "shell",
-            "keyColor": "34"
+            "keyColor": "32"
         },
         {
-            "type": "custom", // InformationEnd
-            "format": "{#90}└{$1}────────────────────────{$1}┘{#}"
+            "type": "colors",
+            "symbol": "circle",
+            "keyColor": "39"
         }
     ]
 }

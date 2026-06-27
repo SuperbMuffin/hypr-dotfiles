@@ -50,3 +50,5 @@ eval "$(zoxide init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/var/lib/snapd/snap/bin
 export PATH=$HOME/.npm-global/bin:$PATH
+
+fastfetch

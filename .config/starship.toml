@@ -1,21 +1,30 @@
 format = """
-[\uE0B6](fg:#1C4961)[$directory](bg:#1C4961)[\uE0B0](fg:#1C4961 bg:#2F79A1)$git_branch[\uE0B0](fg:#2F79A1 bg:#3A95C7)$git_status[\uE0B0](#3A95C7 bg:#40A9E0)$time[\uE0B0](#40A9E0 bg:none) $all$character """
-
+[\uE0B6](fg:#16161E)[$directory](bg:#16161E)[\uE0B2](fg:#1F2335 bg:#16161E)[\uE0B0](fg:#16161E bg:#1F2335)$git_branch[\uE0B0](fg:#1F2335 bg:#1A1B2E)$git_status[\uE0B0](fg:#1A1B2E bg:none)
+$character """
 add_newline = true
 
 [directory]
-style = "bg:#1C4961 fg:white"
+style = "bg:#16161E fg:#A9B1D6"
+truncation_length = 3
+truncate_to_repo = true
 
 [git_branch]
 format = "[ $symbol$branch ]($style)"
-style = "bg:#2F79A1 fg:white"
+symbol = " "
+style = "bg:#1F2335 fg:#7AA2F7"
 
 [git_status]
 format = "[ $all_status$ahead_behind ]($style)"
-style = "bg:#3A95C7 fg:white"
+style = "bg:#1A1B2E fg:#E0AF68"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇋"
+staged = "+"
+modified = "~"
+untracked = "?"
+deleted = "-"
+conflicted = "!"
 
-[time]
-disabled = false
-format = "[ $time ]($style)"
-time_format = "%H:%M"
-style = "bg:#40A9E0 fg:white"
+[character]
+success_symbol = "[❯](bold #7AA2F7)"
+error_symbol = "[❯](bold #F7768E)"
