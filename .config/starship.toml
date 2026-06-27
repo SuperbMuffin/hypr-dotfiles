@@ -1,5 +1,5 @@
 format = """
-[\uE0B6](fg:#16161E)[$directory](bg:#16161E)[\uE0B2](fg:#1F2335 bg:#16161E)[\uE0B0](fg:#16161E bg:#1F2335)$git_branch[\uE0B0](fg:#1F2335 bg:#1A1B2E)$git_status[\uE0B0](fg:#1A1B2E bg:none)
+[\uE0B6](fg:#16161E)[$directory](fg:#1F2335 bg:#16161E)[\uE0B0](fg:#16161E bg:#1F2335)$git_branch[\uE0B0](fg:#1F2335 bg:#1A1B2E)$git_status[\uE0B0](fg:#1A1B2E bg:none)
 $character """
 add_newline = true
 
